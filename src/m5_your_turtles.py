@@ -10,7 +10,7 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 ########################################################################
 
 ########################################################################
-# TODO: 2.
+# DONE: 2.
 #
 #  You should have RUN the PREVIOUS module and READ its code.
 #  (Do so now if you have not already done so.)
@@ -37,9 +37,9 @@ full = 165
 down = 240
 adjust = 30
 Heart = rg.SimpleTurtle()
+Heart.speed = 30
 
 def heart(up,half,full,down):
-    Heart.speed = 10
     Heart.pen = rg.Pen('red', 3)
     Heart.left(45)
     Heart.forward(up)
@@ -67,8 +67,16 @@ for k in range (3):
     down = 0.7 * down
     adjust = 0.7 * adjust
 
+Heart.pen_up()
+Heart.right(90)
+Heart.forward(300)
+Heart.right(180)
+Heart.pen_down()
+Heart.right(90)
 
-
+for k in range (3):
+    heart(up,half,full,down)
+    Heart.right(75)
 
 
 
