@@ -30,25 +30,72 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 ########################################################################
 import rosegraphics as rg
 window = rg.TurtleWindow()
-window.delay(10)
-size = 200
-Cheryl = rg.SimpleTurtle()
-Cheryl.speed = 10
-Cheryl.pen = rg.Pen('red', 3)
-Cheryl.left(45)
-Cheryl.forward(90)
-Cheryl.left(75)
-Cheryl.forward(40)
-Cheryl.left(100)
-Cheryl.forward(55)
-Cheryl.right(75)
-Cheryl.forward(55)
-Cheryl.left(105)
-Cheryl.forward(40)
-Cheryl.left(65)
-Cheryl.forward(83)
-Cheryl.left(81)
+window.delay(5)
+up = 270
+half = 120
+full = 165
+down = 240
+adjust = 30
+Heart = rg.SimpleTurtle()
+
+def heart(up,half,full,down):
+    Heart.speed = 10
+    Heart.pen = rg.Pen('red', 3)
+    Heart.left(45)
+    Heart.forward(up)
+    Heart.left(75)
+    Heart.forward(half)
+    Heart.left(100)
+    Heart.forward(full)
+    Heart.right(75)
+    Heart.forward(full)
+    Heart.left(105)
+    Heart.forward(half)
+    Heart.left(65)
+    Heart.forward(down)
+
+for k in range (3):
+    heart(up,half,full,down)
+    Heart.pen_up()
+    Heart.left(135)
+    Heart.forward(adjust)
+    Heart.pen_down()
+    Heart.right(90)
+    up = 0.7 * up
+    half = 0.7 * half
+    full = 0.7 * full
+    down = 0.7 * down
+    adjust = 0.7 * adjust
+
+
+
+
+
+
+
+
+
+
+
+"""size = 200
+Heart = rg.SimpleTurtle()
+Heart.speed = 10
+Heart.pen = rg.Pen('red', 3)
+Heart.left(45)
+Heart.forward(90)
+Heart.left(75)
+Heart.forward(40)
+Heart.left(100)
+Heart.forward(55)
+Heart.right(75)
+Heart.forward(55)
+Heart.left(105)
+Heart.forward(40)
+Heart.left(65)
+Heart.forward(83)
+Heart.left(81)
 for k in range(5):
-    Cheryl.draw_regular_polygon(5,size)
+    Heart.draw_regular_polygon(5,size)
     size = size - 20
+    """
 window.close_on_mouse_click()
