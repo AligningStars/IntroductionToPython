@@ -29,7 +29,7 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 #  Don't forget to COMMIT your work by using  VCS ~ Commit and Push.
 ########################################################################
 import rosegraphics as rg
-window = rg.TurtleWindow()
+window = rg.TurtleWindow(500, 500)
 window.delay(5)
 up = 270
 half = 120
@@ -38,6 +38,7 @@ down = 240
 adjust = 30
 Heart = rg.SimpleTurtle()
 Heart.speed = 30
+
 
 # draw a heart
 def heart(up, half, full, down):
@@ -55,8 +56,9 @@ def heart(up, half, full, down):
     Heart.left(65)
     Heart.forward(down)
 
+
 # draw 3 hearts in descending sizes
-for k in range (3):
+for k in range(3):
     heart(up, half, full, down)
     Heart.pen_up()
     Heart.left(135)
