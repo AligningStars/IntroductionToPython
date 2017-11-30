@@ -40,7 +40,7 @@ Heart = rg.SimpleTurtle()
 Heart.speed = 30
 
 # draw a heart
-def heart(up,half,full,down):
+def heart(up, half, full, down):
     Heart.pen = rg.Pen('red', 3)
     Heart.left(45)
     Heart.forward(up)
@@ -57,7 +57,7 @@ def heart(up,half,full,down):
 
 # draw 3 hearts in descending sizes
 for k in range (3):
-    heart(up,half,full,down)
+    heart(up, half, full, down)
     Heart.pen_up()
     Heart.left(135)
     Heart.forward(adjust)
@@ -79,7 +79,7 @@ Heart.right(90)
 
 # draw 3 hearts as a flower
 for k in range (3):
-    heart(up,half,full,down)
+    heart(up, half, full, down)
     Heart.right(75)
 
 window.close_on_mouse_click()
